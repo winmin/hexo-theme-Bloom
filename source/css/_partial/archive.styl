@@ -169,3 +169,64 @@
 
     &:hover
       color: $color-link
+
+// ---- Tags Page ----
+.tags-page
+  max-width: 800px
+  margin: 0 auto
+
+  .page-title
+    font-size: $font-size-h1
+    font-weight: 700
+    margin-bottom: $spacing-lg
+
+.tags-posts
+  margin-top: $section-gap
+
+.tag-section
+  margin-bottom: $section-gap
+
+.tag-name
+  font-size: $font-size-large
+  font-weight: 600
+  color: $color-accent
+  margin-bottom: $spacing-md
+
+  a
+    color: $color-accent
+
+    &:hover
+      color: $color-link
+
+  .count
+    font-size: $font-size-small
+    font-weight: normal
+    color: $color-text-secondary
+    margin-left: $spacing-sm
+
+.tag-post-list
+  list-style: none
+
+.tag-post-item
+  display: flex
+  align-items: baseline
+  padding: $spacing-sm 0
+  gap: $spacing-md
+  border-bottom: 1px dashed darken($color-border, 20%)
+
+  &:last-child
+    border-bottom: none
+
+  .post-date
+    width: 90px
+    flex-shrink: 0
+    font-size: $font-size-small
+    font-family: $font-family-mono
+    color: $color-text-secondary
+
+  .post-link
+    flex: 1
+    color: $color-text
+
+    &:hover
+      color: $color-link

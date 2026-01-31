@@ -1,0 +1,35 @@
+<div class="tags-page">
+  <h1 class="page-title"><%= page.title || __('nav.tags') %></h1>
+
+  <% if (site.tags.length > 0) { %>
+    <div class="tags-list">
+      <% site.tags.sort('name').each(function(tag) { %>
+        <a href="<%- url_for(tag.path) %>" class="tag-item">
+          #<%= tag.name %>
+          <span class="count">(<%= tag.posts.length %>)</span>
+        </a>
+      <% }); %>
+    </div>
+
+    <div class="tags-posts">
+      <% site.tags.sort('name').each(function(tag) { %>
+        <section class="tag-section" id="<%= tag.slug %>">
+          <h2 class="tag-name">
+            <a href="<%- url_for(tag.path) %>">#<%= tag.name %></a>
+            <span class="count"><%= tag.posts.length %> posts</span>
+          </h2>
+          <ul class="tag-post-list">
+            <% tag.posts.sort('-date').each(function(post) { %>
+              <li class="tag-post-item">
+                <span class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+                <a href="<%- url_for(post.path) %>" class="post-link"><%= post.title %></a>
+              </li>
+            <% }); %>
+          </ul>
+        </section>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <p class="no-data">No tags yet.</p>
+  <% } %>
+</div>
