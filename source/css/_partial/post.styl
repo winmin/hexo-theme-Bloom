@@ -9,6 +9,11 @@
   font-weight: 700
   line-height: 1.3
   margin-bottom: $spacing-md
+  word-wrap: break-word
+  overflow-wrap: break-word
+
+  +respond-to($breakpoint-mobile)
+    font-size: 1.5rem
 
 .post-meta
   display: flex
@@ -30,6 +35,8 @@
 .post-content
   font-size: 1rem
   line-height: $line-height
+  overflow-wrap: break-word
+  word-wrap: break-word
 
   h1, h2, h3, h4, h5, h6
     margin: 1.5em 0 0.5em

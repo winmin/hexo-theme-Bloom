@@ -33,9 +33,14 @@
   font-weight: 700
   color: $color-text
   text-decoration: none
+  word-wrap: break-word
+  overflow-wrap: break-word
 
   &:hover
     color: $color-accent
+
+  +respond-to($breakpoint-mobile)
+    font-size: 1.2rem
 
 // ---- Navigation ----
 .nav

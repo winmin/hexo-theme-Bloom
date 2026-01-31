@@ -9,17 +9,22 @@ pre
   overflow: hidden
   margin: $spacing-md 0
   position: relative
+  max-width: 100%
 
 figure.highlight
   margin: $spacing-md 0
+  overflow-x: auto
+  -webkit-overflow-scrolling: touch
 
   pre
     margin: 0
     padding: $spacing-md
     overflow-x: auto
+    min-width: 0
 
   table
-    width: 100%
+    width: auto
+    min-width: 100%
     border: none
     margin: 0
 
