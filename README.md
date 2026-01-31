@@ -1,6 +1,12 @@
-# Hexo Theme Bloom
+<p align="center">
+  <img src="source/images/favicon.png" alt="Bloom Logo" width="120">
+</p>
 
-A clean and minimal Hexo theme with categorized column layout, inspired by [hexo-theme-cactus](https://github.com/probberechts/hexo-theme-cactus) dark mode and [leavesongs.com](https://www.leavesongs.com).
+<h1 align="center">Hexo Theme Bloom</h1>
+
+<p align="center">
+  A clean and minimal Hexo theme with categorized column layout, inspired by <a href="https://github.com/probberechts/hexo-theme-cactus">hexo-theme-cactus</a> dark mode and <a href="https://www.leavesongs.com">leavesongs.com</a>.
+</p>
 
 ## Screenshots
 
