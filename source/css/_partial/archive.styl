@@ -34,6 +34,11 @@
   &:hover .post-link
     color: $color-link
 
+  +respond-to($breakpoint-mobile)
+    flex-direction: column
+    align-items: flex-start
+    gap: $spacing-xs
+
 .archive-post-date
   width: 80px
   flex-shrink: 0
@@ -41,11 +46,19 @@
   font-family: $font-family-mono
   color: $color-text-secondary
 
+  +respond-to($breakpoint-mobile)
+    width: auto
+
 .archive-post-link
   flex: 1
   color: $color-text
   text-ellipsis()
   transition: color $transition-fast
+
+  +respond-to($breakpoint-mobile)
+    white-space: normal
+    overflow: visible
+    text-overflow: clip
 
   &:hover
     color: $color-link

@@ -57,17 +57,31 @@
     .post-link
       color: $color-link
 
+  +respond-to($breakpoint-mobile)
+    flex-direction: column
+    align-items: flex-start
+    gap: $spacing-xs
+
 .post-link
   color: $color-text
   flex: 1
   text-ellipsis()
   transition: color $transition-fast
 
+  +respond-to($breakpoint-mobile)
+    white-space: normal
+    overflow: visible
+    text-overflow: clip
+    order: 1
+
 .post-date
   color: $color-text-secondary
   font-size: $font-size-small
   font-family: $font-family-mono
   flex-shrink: 0
+
+  +respond-to($breakpoint-mobile)
+    order: 2
 
 // ---- View All Link ----
 .view-all
@@ -110,6 +124,11 @@
   &:last-child
     border-bottom: none
 
+  +respond-to($breakpoint-mobile)
+    flex-direction: column
+    align-items: flex-start
+    gap: $spacing-xs
+
   .post-link
     color: $color-text
     flex: 1
@@ -117,6 +136,11 @@
 
     &:hover
       color: $color-link
+
+    +respond-to($breakpoint-mobile)
+      white-space: normal
+      overflow: visible
+      text-overflow: clip
 
   .post-date
     color: $color-text-secondary
