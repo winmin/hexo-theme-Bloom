@@ -18,6 +18,8 @@ post:
   words: 字
   min_read: 分钟阅读
   toc: 目录
+  categories: 分类
+  tags: 标签
 
 pagination:
   prev: 上一页

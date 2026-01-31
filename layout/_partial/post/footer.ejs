@@ -1,7 +1,16 @@
 <footer class="post-footer">
-  <% if (page.tags && page.tags.length > 0) { %>
+  <% if (page.categories && page.categories.length) { %>
+    <div class="post-categories">
+      <span class="meta-label"><%= __('post.categories') %>: </span>
+      <% page.categories.forEach(function(cat) { %>
+        <a href="<%- url_for(cat.path) %>" class="category"><%= cat.name %></a>
+      <% }); %>
+    </div>
+  <% } %>
+  <% if (page.tags && page.tags.length) { %>
     <div class="post-tags">
-      <% page.tags.each(function(tag) { %>
+      <span class="meta-label"><%= __('post.tags') %>: </span>
+      <% page.tags.forEach(function(tag) { %>
         <a href="<%- url_for(tag.path) %>" class="tag"><%= tag.name %></a>
       <% }); %>
     </div>

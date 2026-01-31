@@ -18,6 +18,8 @@ post:
   words: words
   min_read: min read
   toc: Table of Contents
+  categories: Categories
+  tags: Tags
 
 pagination:
   prev: Prev

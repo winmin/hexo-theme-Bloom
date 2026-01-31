@@ -109,27 +109,38 @@
   padding-top: $spacing-lg
   border-top: 1px solid $color-border
 
-// ---- Tags ----
+// ---- Categories & Tags ----
+.post-categories
 .post-tags
   display: flex
   flex-wrap: wrap
+  align-items: center
   gap: $spacing-sm
+  margin-bottom: $spacing-md
 
-  .tag
-    font-size: $font-size-small
-    color: $color-text-secondary
-    background: $color-background-code
-    padding: $spacing-xs $spacing-sm
-    border-radius: $border-radius
-    transition: color $transition-fast, background $transition-fast
+  &:last-child
+    margin-bottom: 0
 
-    &:hover
-      color: $color-link
-      background: $color-background-hover
+.meta-label
+  font-size: $font-size-small
+  color: $color-text-muted
 
-    &::before
-      content: "#"
-      margin-right: 2px
+.category
+.tag
+  font-size: $font-size-small
+  color: $color-text-secondary
+  background: $color-background-code
+  padding: $spacing-xs $spacing-sm
+  border-radius: $border-radius
+  transition: color $transition-fast, background $transition-fast
+
+  &:hover
+    color: $color-link
+    background: $color-background-hover
+
+.tag::before
+  content: "#"
+  margin-right: 2px
 
 // ---- Post Navigation ----
 .post-nav
