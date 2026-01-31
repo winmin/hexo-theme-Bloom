@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourname/hexo-theme-Bloom.git"
+    "url": "https://github.com/WinMin/hexo-theme-Bloom.git"
   },
   "keywords": [
     "hexo",
@@ -15,12 +15,12 @@
     "minimal",
     "columns"
   ],
-  "author": "Your Name",
+  "author": "WinMin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourname/hexo-theme-Bloom/issues"
+    "url": "https://github.com/WinMin/hexo-theme-Bloom/issues"
   },
-  "homepage": "https://github.com/yourname/hexo-theme-Bloom#readme",
+  "homepage": "https://github.com/WinMin/hexo-theme-Bloom#readme",
   "dependencies": {
     "hexo-generator-searchdb": "^1.5.0",
     "hexo-renderer-ejs": "^2.0.0",
