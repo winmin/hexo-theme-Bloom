@@ -48,6 +48,21 @@
 <!-- Stylesheets -->
 <%- css('css/style') %>
 
+<!-- Custom Layout Variables -->
+<%
+var layoutConfig = theme.layout || {};
+var pageWidth = layoutConfig.page_width || 52;
+var contentWidth = layoutConfig.content_width || 800;
+var mobilePadding = layoutConfig.mobile_padding || 15;
+%>
+<style>
+:root {
+  --page-width: <%= pageWidth %>rem;
+  --content-width: <%= contentWidth %>px;
+  --mobile-padding: <%= mobilePadding %>px;
+}
+</style>
+
 <!-- Analytics -->
 <% if (theme.analytics && theme.analytics.google) { %>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.analytics.google %>"></script>

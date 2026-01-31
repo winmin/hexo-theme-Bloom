@@ -9,9 +9,12 @@
   z-index: 100
 
 .header-inner
-  max-width: $page-width
+  max-width: var(--page-width, $page-width)
   margin: 0 auto
   padding: 0 $spacing-md
+
+  +respond-to($breakpoint-mobile)
+    padding: 0 var(--mobile-padding, $spacing-md)
 
 // ---- Brand (Logo + Title) ----
 .header-brand

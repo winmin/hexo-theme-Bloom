@@ -2,12 +2,15 @@
 
 // ---- Container ----
 .container
-  max-width: $page-width
+  max-width: var(--page-width, $page-width)
   margin: 0 auto
   padding: 0 $spacing-md
   min-height: 100vh
   display: flex
   flex-direction: column
+
+  +respond-to($breakpoint-mobile)
+    padding: 0 var(--mobile-padding, $spacing-md)
 
 // ---- Main ----
 .main
@@ -22,8 +25,9 @@
   // Vertical layout (leavesongs style)
   &.vertical
     flex-direction: column
-    max-width: 800px
+    max-width: var(--content-width, 800px)
     margin: 0 auto
+    width: 100%
 
     .sidebar
       margin-bottom: $spacing-md
@@ -54,5 +58,6 @@
 
 // ---- Page Layout (no sidebar) ----
 .page-layout
-  max-width: 720px
+  max-width: var(--content-width, 720px)
   margin: 0 auto
+  width: 100%

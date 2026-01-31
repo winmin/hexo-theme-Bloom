@@ -5,39 +5,42 @@
 # ---- Navigation Menu ----
 nav:
   Home: /
-  Archives: /archives/
   About: /about/
+  Articles: /archives/
+  RSS: /atom.xml
+  Categories: /categories/
+  Links: /link
 
 # ---- Profile / Intro ----
 profile:
   enabled: true
-  avatar: /images/avatar.png
+    #avatar: /images/avatar.png
   gravatar_email: ""
-  title: "Your Name"
-  subtitle: "A brief introduction"
+    #title: "Swing"
+  subtitle: "努力是为了 站在万人中央 成为别人的光"
   description: |
-    Security Researcher / Developer / Blogger.
+    Know it then hack it!
 
 # ---- Homepage Columns (Core Feature) ----
 # Enable categorized columns on homepage
 # Max 2 columns supported
 columns:
-  enabled: true
+  enabled: false
   layout: two-column           # single-column | two-column
   items:
     - name: Security           # Display name
-      category: security       # Category slug
+      category: Writeup       # Category slug
       limit: 10                # Number of posts to show
       show_date: true
-    - name: Life
-      category: life
+    - name: Note
+      category: Note
       limit: 10
       show_date: true
 
 # Fallback when columns disabled
 default_list:
   title: "Recent Posts"
-  limit: 15
+  limit: 10
   show_date: true
 
 # ---- Search ----
@@ -48,9 +51,9 @@ search:
 
 # ---- Social Links ----
 social:
-  github: ""
-  twitter: ""
-  email: ""
+  github: "https://github.com/WinMin"
+  twitter: "https://twitter.com/bestswngs"
+  email: "mailto:ask@mail.exp.sh"
   weibo: ""
   rss: /atom.xml
 
@@ -62,7 +65,12 @@ footer:
 
 # ---- Appearance ----
 colorscheme: dark
-page_width: 52
+
+# ---- Layout Width ----
+layout:
+  page_width: 60          # 整体页面最大宽度 (rem)
+  content_width: 900      # 文章内容区宽度 (px)
+  mobile_padding: 12      # 移动端两侧边距 (px)
 
 # ---- Logo ----
 logo:
@@ -86,10 +94,10 @@ highlight:
 
 # ---- Comments ----
 comments:
-  enabled: false
+  enabled: true
   provider: ""                 # disqus | utterances | giscus
   disqus:
-    shortname: ""
+    shortname: "swing"
   utterances:
     repo: ""
     issue_term: pathname
@@ -101,8 +109,8 @@ comments:
 
 # ---- Analytics ----
 analytics:
-  google: ""
-  baidu: ""
+  google: "UA-133464311-1"
+  baidu: "2e6da3c375c8a87f5b664cea6d4cb29c"
 
 # ---- 404 Page ----
 error_404:
