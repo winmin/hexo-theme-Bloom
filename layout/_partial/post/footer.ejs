@@ -1,0 +1,9 @@
+<footer class="post-footer">
+  <% if (page.tags && page.tags.length > 0) { %>
+    <div class="post-tags">
+      <% page.tags.each(function(tag) { %>
+        <a href="<%- url_for(tag.path) %>" class="tag"><%= tag.name %></a>
+      <% }); %>
+    </div>
+  <% } %>
+</footer>

@@ -1,0 +1,62 @@
+// Footer Styles
+
+.footer
+  padding: $spacing-lg 0
+  border-top: 1px solid $color-border
+  margin-top: auto
+
+.footer-content
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  gap: $spacing-sm
+  font-size: $font-size-small
+  color: $color-text-secondary
+
+  +respond-to($breakpoint-mobile)
+    flex-direction: column
+    text-align: center
+
+.footer-left
+  .copyright
+    margin-right: $spacing-sm
+
+.footer-right
+  display: flex
+  gap: $spacing-md
+
+  span
+    &::after
+      content: " | "
+      margin-left: $spacing-md
+      color: $color-border
+
+    &:last-child::after
+      display: none
+
+  a
+    color: $color-text-secondary
+
+    &:hover
+      color: $color-link
+
+// ---- Social Links ----
+.footer-social
+  display: flex
+  justify-content: center
+  gap: $spacing-md
+  margin-top: $spacing-md
+  padding-top: $spacing-md
+  border-top: 1px dashed $color-border
+
+.social-link
+  color: $color-text-secondary
+  transition: color $transition-fast, transform $transition-fast
+
+  &:hover
+    color: $color-accent
+    transform: translateY(-2px)
+
+  svg
+    display: block

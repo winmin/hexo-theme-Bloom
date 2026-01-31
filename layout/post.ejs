@@ -1,0 +1,17 @@
+<article class="post">
+  <%- partial('_partial/post/header') %>
+
+  <% if (theme.post.toc && page.toc !== false && toc(page.content)) { %>
+    <%- partial('_partial/post/toc') %>
+  <% } %>
+
+  <%- partial('_partial/post/content') %>
+
+  <%- partial('_partial/post/footer') %>
+
+  <%- partial('_partial/post/nav') %>
+
+  <% if (theme.comments && theme.comments.enabled) { %>
+    <%- partial('_partial/post/comments') %>
+  <% } %>
+</article>

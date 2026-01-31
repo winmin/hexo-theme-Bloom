@@ -1,0 +1,92 @@
+// Page Styles (About, etc.)
+
+.page
+  max-width: 720px
+  margin: 0 auto
+
+.page-header
+  margin-bottom: $section-gap
+
+.page-title
+  font-size: $font-size-h1
+  font-weight: 700
+  margin-bottom: $spacing-md
+
+.page-content
+  font-size: 1rem
+  line-height: $line-height
+
+  h1, h2, h3, h4, h5, h6
+    margin: 1.5em 0 0.5em
+    font-weight: 600
+
+  h2
+    padding-bottom: $spacing-sm
+    border-bottom: 1px solid $color-border
+
+  p
+    margin-bottom: 1em
+
+  ul, ol
+    margin: 1em 0
+    padding-left: 2em
+
+  ul
+    list-style: disc
+
+  ol
+    list-style: decimal
+
+  li
+    margin-bottom: 0.5em
+
+  img
+    display: block
+    max-width: 100%
+    margin: $spacing-md auto
+    border-radius: $border-radius
+
+  a
+    color: $color-link
+
+    &:hover
+      color: $color-link-hover
+
+  blockquote
+    margin: $spacing-md 0
+    padding: $spacing-sm $spacing-md
+    border-left: 3px solid $color-accent
+    background: $color-background-code
+
+// ---- 404 Page ----
+.error-page
+  text-align: center
+  padding: $section-gap * 2 0
+
+.error-code
+  font-size: 6rem
+  font-weight: 700
+  color: $color-accent
+  line-height: 1
+  margin-bottom: $spacing-md
+
+.error-title
+  font-size: $font-size-h1
+  margin-bottom: $spacing-md
+
+.error-description
+  color: $color-text-secondary
+  margin-bottom: $spacing-lg
+
+.error-link
+  display: inline-block
+  padding: $spacing-sm $spacing-lg
+  background: $color-accent
+  color: $color-background
+  border-radius: $border-radius
+  font-weight: 600
+  transition: background $transition-fast
+
+  &:hover
+    background: $color-accent-hover
+    color: $color-background

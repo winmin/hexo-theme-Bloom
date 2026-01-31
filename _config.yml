@@ -1,0 +1,111 @@
+# ==========================================
+# Bloom Theme Configuration
+# ==========================================
+
+# ---- Navigation Menu ----
+nav:
+  Home: /
+  Archives: /archives/
+  About: /about/
+
+# ---- Profile / Intro ----
+profile:
+  enabled: true
+  avatar: /images/avatar.png
+  gravatar_email: ""
+  title: "Your Name"
+  subtitle: "A brief introduction"
+  description: |
+    Security Researcher / Developer / Blogger.
+
+# ---- Homepage Columns (Core Feature) ----
+# Enable categorized columns on homepage
+# Max 2 columns supported
+columns:
+  enabled: true
+  layout: two-column           # single-column | two-column
+  items:
+    - name: Security           # Display name
+      category: security       # Category slug
+      limit: 10                # Number of posts to show
+      show_date: true
+    - name: Life
+      category: life
+      limit: 10
+      show_date: true
+
+# Fallback when columns disabled
+default_list:
+  title: "Recent Posts"
+  limit: 15
+  show_date: true
+
+# ---- Search ----
+search:
+  enabled: true
+  path: search.xml
+  placeholder: "Search..."
+
+# ---- Social Links ----
+social:
+  github: ""
+  twitter: ""
+  email: ""
+  weibo: ""
+  rss: /atom.xml
+
+# ---- Footer ----
+footer:
+  copyright_since: 2024
+  powered_by: true
+  theme_info: true
+
+# ---- Appearance ----
+colorscheme: dark
+page_width: 52
+
+# ---- Logo ----
+logo:
+  enabled: false
+  image: /images/logo.png
+  width: 100
+  height: 100
+
+# ---- Post Settings ----
+post:
+  show_updated: true
+  show_wordcount: false
+  show_readtime: false
+  excerpt_link: "Read More"
+  toc: true
+
+# ---- Code Highlight ----
+highlight:
+  theme: tomorrow-night
+  copy_button: true
+
+# ---- Comments ----
+comments:
+  enabled: false
+  provider: ""                 # disqus | utterances | giscus
+  disqus:
+    shortname: ""
+  utterances:
+    repo: ""
+    issue_term: pathname
+  giscus:
+    repo: ""
+    repo_id: ""
+    category: ""
+    category_id: ""
+
+# ---- Analytics ----
+analytics:
+  google: ""
+  baidu: ""
+
+# ---- 404 Page ----
+error_404:
+  enabled: true
+  title: "Page Not Found"
+  description: "The page you're looking for doesn't exist."

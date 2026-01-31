@@ -1,0 +1,21 @@
+<% if (page.prev || page.next) { %>
+<nav class="post-nav">
+  <% if (page.prev) { %>
+    <div class="post-nav-item prev">
+      <span class="post-nav-label">&larr; <%= __('pagination.prev') %></span>
+      <a href="<%- url_for(page.prev.path) %>" class="post-nav-title">
+        <%= page.prev.title %>
+      </a>
+    </div>
+  <% } %>
+
+  <% if (page.next) { %>
+    <div class="post-nav-item next">
+      <span class="post-nav-label"><%= __('pagination.next') %> &rarr;</span>
+      <a href="<%- url_for(page.next.path) %>" class="post-nav-title">
+        <%= page.next.title %>
+      </a>
+    </div>
+  <% } %>
+</nav>
+<% } %>

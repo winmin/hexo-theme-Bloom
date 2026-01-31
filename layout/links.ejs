@@ -1,0 +1,48 @@
+<div class="links-page">
+  <h1 class="page-title"><%= page.title || 'Links' %></h1>
+
+  <% if (page.content) { %>
+    <div class="links-intro">
+      <%- page.content %>
+    </div>
+  <% } %>
+
+  <%
+  // 优先从页面 front-matter 读取，其次从主题配置读取
+  var links = page.links || theme.links || [];
+  %>
+
+  <% if (links && links.length > 0) { %>
+    <div class="links-grid">
+      <% links.forEach(function(link) {
+        // 自动获取 favicon
+        var avatar = link.avatar;
+        if (!avatar && link.url) {
+          try {
+            var urlObj = new URL(link.url);
+            var domain = urlObj.hostname;
+            // 使用 Google Favicon API
+            avatar = 'https://www.google.com/s2/favicons?domain=' + domain + '&sz=64';
+          } catch(e) {}
+        }
+      %>
+        <a href="<%= link.url %>" class="link-card" target="_blank" rel="noopener noreferrer">
+          <div class="link-avatar">
+            <% if (avatar) { %>
+              <img src="<%= avatar %>" alt="<%= link.name %>" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <span class="link-initial" style="display:none;"><%= link.name.charAt(0).toUpperCase() %></span>
+            <% } else { %>
+              <span class="link-initial"><%= link.name.charAt(0).toUpperCase() %></span>
+            <% } %>
+          </div>
+          <div class="link-info">
+            <div class="link-name"><%= link.name %></div>
+            <% if (link.desc) { %>
+              <div class="link-desc"><%= link.desc %></div>
+            <% } %>
+          </div>
+        </a>
+      <% }); %>
+    </div>
+  <% } %>
+</div>

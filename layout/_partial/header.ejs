@@ -1,0 +1,53 @@
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <% if (theme.logo && theme.logo.enabled) { %>
+        <a href="<%- url_for('/') %>" class="logo">
+          <img src="<%- url_for(theme.logo.image) %>"
+               width="<%= theme.logo.width %>"
+               height="<%= theme.logo.height %>"
+               alt="<%= config.title %>">
+        </a>
+      <% } %>
+      <a href="<%- url_for('/') %>" class="site-title">
+        <%= config.title %>
+      </a>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <% if (theme.nav) { %>
+          <% var navKeys = Object.keys(theme.nav); %>
+          <% for (var i = 0; i < navKeys.length; i++) { %>
+            <%
+            var name = navKeys[i];
+            var link = theme.nav[name];
+            var isActive = false;
+            if (link === '/' && is_home()) {
+              isActive = true;
+            } else if (link !== '/' && page.path && page.path.indexOf(link.replace(/^\/|\/$/g, '')) !== -1) {
+              isActive = true;
+            }
+            %>
+            <li class="nav-item">
+              <a href="<%- url_for(link) %>"
+                 class="nav-link<%= isActive ? ' active' : '' %>"
+                 <% if (link.startsWith('http')) { %>target="_blank" rel="noopener noreferrer"<% } %>>
+                <%= name %>
+              </a>
+            </li>
+            <% if (i < navKeys.length - 1) { %>
+              <li class="nav-divider">|</li>
+            <% } %>
+          <% } %>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
+</header>

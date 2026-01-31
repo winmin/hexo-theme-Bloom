@@ -1,0 +1,35 @@
+<div class="categories-page">
+  <h1 class="page-title"><%= page.title || __('nav.categories') %></h1>
+
+  <% if (site.categories.length > 0) { %>
+    <div class="categories-list">
+      <% site.categories.sort('name').each(function(category) { %>
+        <a href="<%- url_for(category.path) %>" class="category-item">
+          <%= category.name %>
+          <span class="count">(<%= category.posts.length %>)</span>
+        </a>
+      <% }); %>
+    </div>
+
+    <div class="categories-posts">
+      <% site.categories.sort('name').each(function(category) { %>
+        <section class="category-section" id="<%= category.slug %>">
+          <h2 class="category-name">
+            <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+            <span class="count"><%= category.posts.length %> posts</span>
+          </h2>
+          <ul class="category-post-list">
+            <% category.posts.sort('-date').each(function(post) { %>
+              <li class="category-post-item">
+                <span class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+                <a href="<%- url_for(post.path) %>" class="post-link"><%= post.title %></a>
+              </li>
+            <% }); %>
+          </ul>
+        </section>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <p class="no-data">No categories yet.</p>
+  <% } %>
+</div>

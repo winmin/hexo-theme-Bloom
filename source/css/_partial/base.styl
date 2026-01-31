@@ -1,0 +1,133 @@
+// Base Styles
+
+// ---- Reset ----
+*
+*::before
+*::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+// ---- HTML & Body ----
+html
+  font-size: $font-size-base
+  scroll-behavior: smooth
+  scrollbar-color: $color-scrollbar $color-background
+  scrollbar-width: thin
+
+body
+  font-family: $font-family-body
+  font-size: 1rem
+  line-height: $line-height
+  color: $color-text
+  background-color: $color-background
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  min-height: 100vh
+
+// ---- Selection ----
+::selection
+  background: $color-selection-bg
+  color: $color-selection-text
+
+// ---- Scrollbar ----
+::-webkit-scrollbar
+  width: 8px
+  height: 8px
+
+::-webkit-scrollbar-track
+  background: $color-background
+
+::-webkit-scrollbar-thumb
+  background: $color-scrollbar
+  border-radius: $border-radius
+
+  &:hover
+    background: $color-scrollbar-hover
+
+// ---- Links ----
+a
+  color: $color-link
+  text-decoration: none
+  transition: color $transition-fast
+
+  &:hover
+    color: $color-link-hover
+
+// ---- Images ----
+img
+  max-width: 100%
+  height: auto
+  vertical-align: middle
+
+// ---- Lists ----
+ul, ol
+  list-style: none
+
+// ---- Headings ----
+h1, h2, h3, h4, h5, h6
+  font-weight: 600
+  line-height: 1.4
+  color: $color-text
+
+h1
+  font-size: $font-size-h1
+
+h2
+  font-size: $font-size-h2
+
+h3
+  font-size: $font-size-h3
+
+// ---- Paragraphs ----
+p
+  margin-bottom: 1rem
+
+// ---- Code ----
+code
+  font-family: $font-family-mono
+  font-size: 0.9em
+  background: $color-background-code
+  padding: 2px 6px
+  border-radius: $border-radius
+
+pre
+  font-family: $font-family-mono
+  background: $color-background-code
+  padding: $spacing-md
+  border-radius: $border-radius
+  overflow-x: auto
+  margin: $spacing-md 0
+
+  code
+    background: none
+    padding: 0
+
+// ---- Blockquote ----
+blockquote
+  border-left: 3px solid $color-quote-border
+  padding-left: $spacing-md
+  margin: $spacing-md 0
+  color: $color-text-secondary
+  font-style: italic
+
+// ---- Horizontal Rule ----
+hr
+  border: none
+  border-top: 1px solid $color-border
+  margin: $spacing-lg 0
+
+// ---- Tables ----
+table
+  width: 100%
+  border-collapse: collapse
+  margin: $spacing-md 0
+
+th, td
+  padding: $spacing-sm $spacing-md
+  border: 1px solid $color-border
+  text-align: left
+
+th
+  background: $color-background-code
+  font-weight: 600

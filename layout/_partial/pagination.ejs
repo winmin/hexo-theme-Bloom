@@ -1,0 +1,43 @@
+<% if (page.total > 1) { %>
+<nav class="pagination">
+  <%
+  var prev = page.current - 1;
+  var next = page.current + 1;
+  var total = page.total;
+  var midSize = 2;
+  var startPage = Math.max(1, page.current - midSize);
+  var endPage = Math.min(total, page.current + midSize);
+  var base = page.base || '/';
+  %>
+
+  <% if (page.prev) { %>
+    <a href="<%- url_for(page.prev_link) %>" class="prev-link"><%= __('pagination.prev') %></a>
+  <% } %>
+
+  <% if (startPage > 1) { %>
+    <a href="<%- url_for(base) %>" class="page-number">1</a>
+    <% if (startPage > 2) { %>
+      <span class="space">&hellip;</span>
+    <% } %>
+  <% } %>
+
+  <% for (var i = startPage; i <= endPage; i++) { %>
+    <% if (i === page.current) { %>
+      <span class="page-number current"><%= i %></span>
+    <% } else { %>
+      <a href="<%- url_for(i === 1 ? base : base + 'page/' + i + '/') %>" class="page-number"><%= i %></a>
+    <% } %>
+  <% } %>
+
+  <% if (endPage < total) { %>
+    <% if (endPage < total - 1) { %>
+      <span class="space">&hellip;</span>
+    <% } %>
+    <a href="<%- url_for(base + 'page/' + total + '/') %>" class="page-number"><%= total %></a>
+  <% } %>
+
+  <% if (page.next) { %>
+    <a href="<%- url_for(page.next_link) %>" class="next-link"><%= __('pagination.next') %></a>
+  <% } %>
+</nav>
+<% } %>

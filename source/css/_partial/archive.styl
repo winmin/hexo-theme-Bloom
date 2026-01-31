@@ -1,0 +1,158 @@
+// Archive & Category & Tag Pages Styles
+
+.archive-page
+  max-width: 720px
+  margin: 0 auto
+
+.archive-title
+  font-size: $font-size-h1
+  font-weight: 700
+  margin-bottom: $section-gap
+
+// ---- Archive Year Group ----
+.archive-year
+  margin-bottom: $section-gap
+
+.archive-year-title
+  font-size: $font-size-large
+  font-weight: 600
+  color: $color-accent
+  margin-bottom: $spacing-md
+  padding-bottom: $spacing-sm
+  border-bottom: 1px solid $color-border
+
+// ---- Archive Post List ----
+.archive-posts
+  list-style: none
+
+.archive-post-item
+  display: flex
+  align-items: baseline
+  padding: $spacing-sm 0
+  gap: $spacing-md
+
+  &:hover .post-link
+    color: $color-link
+
+.archive-post-date
+  width: 80px
+  flex-shrink: 0
+  font-size: $font-size-small
+  font-family: $font-family-mono
+  color: $color-text-secondary
+
+.archive-post-link
+  flex: 1
+  color: $color-text
+  text-ellipsis()
+  transition: color $transition-fast
+
+  &:hover
+    color: $color-link
+
+// ---- Category & Tag Page ----
+.category-page
+.tag-page
+  max-width: 720px
+  margin: 0 auto
+
+.category-title
+.tag-title
+  font-size: $font-size-h1
+  font-weight: 700
+  margin-bottom: $spacing-md
+
+  span
+    color: $color-accent
+
+.category-count
+.tag-count
+  font-size: $font-size-base
+  color: $color-text-secondary
+  margin-bottom: $section-gap
+
+// ---- All Categories/Tags List ----
+.categories-list
+.tags-list
+  display: flex
+  flex-wrap: wrap
+  gap: $spacing-sm
+  margin-bottom: $section-gap
+
+.category-item
+.tag-item
+  font-size: $font-size-small
+  color: $color-text-secondary
+  background: $color-background-code
+  padding: $spacing-xs $spacing-sm
+  border-radius: $border-radius
+  transition: all $transition-fast
+
+  &:hover
+    color: $color-link
+    background: $color-background-hover
+
+  .count
+    margin-left: $spacing-xs
+    color: $color-text-muted
+
+// ---- Categories Page ----
+.categories-page
+  max-width: 800px
+  margin: 0 auto
+
+  .page-title
+    font-size: $font-size-h1
+    font-weight: 700
+    margin-bottom: $spacing-lg
+
+.categories-posts
+  margin-top: $section-gap
+
+.category-section
+  margin-bottom: $section-gap
+
+.category-name
+  font-size: $font-size-large
+  font-weight: 600
+  color: $color-accent
+  margin-bottom: $spacing-md
+
+  a
+    color: $color-accent
+
+    &:hover
+      color: $color-link
+
+  .count
+    font-size: $font-size-small
+    font-weight: normal
+    color: $color-text-secondary
+    margin-left: $spacing-sm
+
+.category-post-list
+  list-style: none
+
+.category-post-item
+  display: flex
+  align-items: baseline
+  padding: $spacing-sm 0
+  gap: $spacing-md
+  border-bottom: 1px dashed darken($color-border, 20%)
+
+  &:last-child
+    border-bottom: none
+
+  .post-date
+    width: 90px
+    flex-shrink: 0
+    font-size: $font-size-small
+    font-family: $font-family-mono
+    color: $color-text-secondary
+
+  .post-link
+    flex: 1
+    color: $color-text
+
+    &:hover
+      color: $color-link

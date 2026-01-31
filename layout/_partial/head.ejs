@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title><% if (page.title) { %><%= page.title %> | <% } %><%= config.title %></title>
+
+<% if (page.description || config.description) { %>
+<meta name="description" content="<%= page.description || config.description %>">
+<% } %>
+<% if (config.author) { %>
+<meta name="author" content="<%= config.author %>">
+<% } %>
+<% if (page.keywords || config.keywords) { %>
+<meta name="keywords" content="<%= page.keywords || config.keywords %>">
+<% } %>
+
+<!-- Canonical -->
+<link rel="canonical" href="<%- url_for(page.path) %>">
+
+<!-- Favicon -->
+<link rel="icon" href="<%- url_for('/images/favicon.ico') %>">
+
+<!-- RSS -->
+<% if (theme.social && theme.social.rss) { %>
+<link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%- url_for(theme.social.rss) %>">
+<% } %>
+
+<!-- Open Graph -->
+<meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+<meta property="og:title" content="<%= page.title || config.title %>">
+<meta property="og:url" content="<%- url_for(page.path) %>">
+<meta property="og:site_name" content="<%= config.title %>">
+<% if (page.description || config.description) { %>
+<meta property="og:description" content="<%= page.description || config.description %>">
+<% } %>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<%= page.title || config.title %>">
+<% if (page.description || config.description) { %>
+<meta name="twitter:description" content="<%= page.description || config.description %>">
+<% } %>
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#1d1f21">
+<meta name="msapplication-TileColor" content="#1d1f21">
+
+<!-- Stylesheets -->
+<%- css('css/style') %>
+
+<!-- Analytics -->
+<% if (theme.analytics && theme.analytics.google) { %>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.analytics.google %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '<%= theme.analytics.google %>');
+</script>
+<% } %>

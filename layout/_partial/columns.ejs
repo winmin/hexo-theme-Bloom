@@ -1,0 +1,57 @@
+<%
+var layout = theme.columns.layout || 'two-column';
+var items = theme.columns.items || [];
+%>
+
+<div class="columns-container columns-<%= layout %>">
+  <% items.forEach(function(column, index) { %>
+    <section class="column column-<%= index %>">
+      <h2 class="column-title">
+        <a href="<%- url_for('/categories/' + column.category + '/') %>">
+          <%= column.name %>
+        </a>
+      </h2>
+
+      <ul class="column-posts">
+        <%
+        // Filter posts by category
+        var categorySlug = column.category.toLowerCase();
+        var categoryPosts = site.posts.filter(function(post) {
+          if (!post.categories || post.categories.length === 0) return false;
+          return post.categories.some(function(cat) {
+            return cat.slug === categorySlug ||
+                   cat.name.toLowerCase() === categorySlug ||
+                   cat.slug.toLowerCase() === categorySlug;
+          });
+        }).sort('-date');
+
+        var limit = column.limit || 10;
+        var displayPosts = categoryPosts.slice(0, limit);
+
+        if (displayPosts.length > 0) {
+          displayPosts.forEach(function(post) {
+        %>
+          <li class="column-post-item">
+            <a href="<%- url_for(post.path) %>" class="post-link">
+              <%= post.title || '(Untitled)' %>
+            </a>
+            <% if (column.show_date !== false) { %>
+              <span class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+            <% } %>
+          </li>
+        <%
+          });
+        } else {
+        %>
+          <li class="no-posts">No posts in this category yet.</li>
+        <% } %>
+      </ul>
+
+      <% if (categoryPosts.length > limit) { %>
+        <a href="<%- url_for('/categories/' + column.category + '/') %>" class="view-all">
+          View All (<%= categoryPosts.length %>) &rarr;
+        </a>
+      <% } %>
+    </section>
+  <% }); %>
+</div>

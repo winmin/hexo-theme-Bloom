@@ -1,0 +1,19 @@
+<div class="tag-page">
+  <h1 class="tag-title">
+    Tag: <span><%= page.tag %></span>
+  </h1>
+  <p class="tag-count"><%= page.posts.length %> posts</p>
+
+  <ul class="archive-posts">
+    <% page.posts.sort('-date').each(function(post) { %>
+      <li class="archive-post-item">
+        <span class="archive-post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+        <a href="<%- url_for(post.path) %>" class="archive-post-link">
+          <%= post.title || '(Untitled)' %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+
+  <%- partial('_partial/pagination') %>
+</div>

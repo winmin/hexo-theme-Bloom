@@ -1,0 +1,47 @@
+<section class="comments-section">
+  <h3 class="comments-title"><%= __('comments.title') %></h3>
+
+  <% if (theme.comments.provider === 'disqus' && theme.comments.disqus.shortname) { %>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = '<%= page.permalink %>';
+        this.page.identifier = '<%= page.path %>';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://<%= theme.comments.disqus.shortname %>.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  <% } %>
+
+  <% if (theme.comments.provider === 'utterances' && theme.comments.utterances.repo) { %>
+    <script src="https://utteranc.es/client.js"
+            repo="<%= theme.comments.utterances.repo %>"
+            issue-term="<%= theme.comments.utterances.issue_term || 'pathname' %>"
+            theme="github-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+  <% } %>
+
+  <% if (theme.comments.provider === 'giscus' && theme.comments.giscus.repo) { %>
+    <script src="https://giscus.app/client.js"
+            data-repo="<%= theme.comments.giscus.repo %>"
+            data-repo-id="<%= theme.comments.giscus.repo_id %>"
+            data-category="<%= theme.comments.giscus.category %>"
+            data-category-id="<%= theme.comments.giscus.category_id %>"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="dark"
+            data-lang="<%= config.language || 'en' %>"
+            crossorigin="anonymous"
+            async>
+    </script>
+  <% } %>
+</section>

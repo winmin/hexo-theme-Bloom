@@ -1,0 +1,20 @@
+<!-- Main Script -->
+<%- js('js/main') %>
+
+<!-- Search -->
+<% if (theme.search && theme.search.enabled) { %>
+<%- js('js/search') %>
+<% } %>
+
+<!-- Baidu Analytics -->
+<% if (theme.analytics && theme.analytics.baidu) { %>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?<%= theme.analytics.baidu %>";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<% } %>

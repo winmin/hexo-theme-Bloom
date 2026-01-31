@@ -1,0 +1,9 @@
+<aside class="sidebar">
+  <% if (theme.profile && theme.profile.enabled) { %>
+    <%- partial('_partial/profile') %>
+  <% } %>
+
+  <% if (theme.search && theme.search.enabled) { %>
+    <%- partial('_partial/search') %>
+  <% } %>
+</aside>

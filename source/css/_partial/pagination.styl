@@ -1,0 +1,45 @@
+// Pagination Styles
+
+.pagination
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: $spacing-sm
+  margin-top: $section-gap
+  padding-top: $spacing-lg
+  border-top: 1px dashed $color-border
+
+.page-number
+  min-width: 36px
+  height: 36px
+  flex-center()
+  font-size: $font-size-small
+  color: $color-text-secondary
+  background: $color-background-code
+  border-radius: $border-radius
+  transition: all $transition-fast
+
+  &:hover
+    color: $color-link
+    background: $color-background-hover
+
+  &.current
+    color: $color-background
+    background: $color-accent
+    font-weight: 600
+
+.prev-link
+.next-link
+  padding: $spacing-xs $spacing-md
+  font-size: $font-size-small
+  color: $color-text-secondary
+  background: $color-background-code
+  border-radius: $border-radius
+  transition: all $transition-fast
+
+  &:hover
+    color: $color-link
+    background: $color-background-hover
+
+.space
+  color: $color-text-muted

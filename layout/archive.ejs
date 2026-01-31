@@ -1,0 +1,38 @@
+<div class="archive-page">
+  <h1 class="archive-title"><%= __('archive.title') %></h1>
+
+  <%
+  var posts = page.posts.sort('-date');
+  var years = {};
+
+  posts.each(function(post) {
+    var year = post.date.year();
+    if (!years[year]) {
+      years[year] = [];
+    }
+    years[year].push(post);
+  });
+
+  var sortedYears = Object.keys(years).sort(function(a, b) {
+    return b - a;
+  });
+  %>
+
+  <% sortedYears.forEach(function(year) { %>
+    <section class="archive-year">
+      <h2 class="archive-year-title"><%= year %></h2>
+      <ul class="archive-posts">
+        <% years[year].forEach(function(post) { %>
+          <li class="archive-post-item">
+            <span class="archive-post-date"><%= date(post.date, 'MM-DD') %></span>
+            <a href="<%- url_for(post.path) %>" class="archive-post-link">
+              <%= post.title || '(Untitled)' %>
+            </a>
+          </li>
+        <% }); %>
+      </ul>
+    </section>
+  <% }); %>
+
+  <%- partial('_partial/pagination') %>
+</div>

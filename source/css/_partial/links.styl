@@ -1,0 +1,89 @@
+// Friends Links Page Styles
+
+.links-page
+  max-width: 900px
+  margin: 0 auto
+
+  .page-title
+    font-size: $font-size-h1
+    font-weight: 700
+    margin-bottom: $spacing-lg
+
+.links-intro
+  margin-bottom: $section-gap
+  color: $color-text-secondary
+  line-height: 1.8
+
+  a
+    color: $color-link
+
+// ---- Links Grid ----
+.links-grid
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+  gap: $spacing-lg
+
+// ---- Link Card ----
+.link-card
+  display: flex
+  align-items: center
+  gap: $spacing-md
+  padding: $spacing-md
+  background: $color-background-code
+  border: 1px solid $color-border
+  border-radius: $border-radius-lg
+  text-decoration: none
+  transition: all $transition-fast
+
+  &:hover
+    border-color: $color-accent
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+
+    .link-name
+      color: $color-accent
+
+// ---- Avatar ----
+.link-avatar
+  width: 50px
+  height: 50px
+  flex-shrink: 0
+  border-radius: 50%
+  overflow: hidden
+  background: $color-background-hover
+  display: flex
+  align-items: center
+  justify-content: center
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+  .link-initial
+    font-size: 1.2rem
+    font-weight: 600
+    color: $color-accent
+
+// ---- Info ----
+.link-info
+  flex: 1
+  min-width: 0
+  overflow: hidden
+
+.link-name
+  font-size: $font-size-base
+  font-weight: 600
+  color: $color-text
+  margin-bottom: 4px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  transition: color $transition-fast
+
+.link-desc
+  font-size: $font-size-small
+  color: $color-text-secondary
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis

@@ -1,0 +1,125 @@
+// Sidebar Styles
+
+.sidebar
+  +respond-to($breakpoint-tablet)
+    margin-bottom: $section-gap
+
+// ---- Profile ----
+.profile
+  margin-bottom: $spacing-md
+
+  // Vertical layout style
+  .vertical &
+    margin-bottom: $spacing-lg
+
+    .profile-description
+      font-size: $font-size-base
+      max-width: 600px
+
+.profile-avatar
+  width: 80px
+  height: 80px
+  border-radius: 50%
+  margin-bottom: $spacing-md
+  border: 2px solid $color-border
+
+.profile-name
+  font-size: $font-size-large
+  font-weight: 700
+  margin-bottom: $spacing-xs
+  color: $color-text
+
+.profile-subtitle
+  font-size: $font-size-small
+  color: $color-text-secondary
+  margin-bottom: $spacing-sm
+
+.profile-description
+  font-size: $font-size-small
+  color: $color-text-secondary
+  line-height: 1.6
+
+  a
+    color: $color-link
+
+    &:hover
+      color: $color-link-hover
+
+  p
+    margin-bottom: $spacing-sm
+
+    &:last-child
+      margin-bottom: 0
+
+// ---- Profile Social Links ----
+.profile-social
+  display: flex
+  gap: $spacing-md
+  margin-top: $spacing-md
+
+  .social-link
+    color: $color-text-secondary
+
+    &:hover
+      color: $color-accent
+
+// ---- Search Box ----
+.search-box
+  margin-top: $spacing-lg
+  padding-top: $spacing-lg
+  border-top: 1px dashed $color-border
+
+  // Vertical layout style
+  .vertical &
+    border-top: none
+    padding-top: 0
+    max-width: 100%
+
+.search-input
+  width: 100%
+  padding: $spacing-sm $spacing-md
+  font-size: $font-size-base
+  color: $color-text
+  background: $color-background-code
+  border: 1px solid $color-border
+  border-radius: $border-radius
+  outline: none
+  transition: border-color $transition-fast
+
+  &::placeholder
+    color: $color-text-muted
+
+  &:focus
+    border-color: $color-accent
+
+.search-result
+  margin-top: $spacing-sm
+
+.search-result-list
+  max-height: 300px
+  overflow-y: auto
+
+.search-result-item
+  padding: $spacing-sm 0
+  border-bottom: 1px dashed $color-border
+
+  &:last-child
+    border-bottom: none
+
+  a
+    color: $color-text
+    display: block
+
+    &:hover
+      color: $color-link
+
+  mark
+    background: rgba(212, 128, 170, 0.3)
+    color: $color-link
+    padding: 0 2px
+    border-radius: 2px
+
+.search-no-result
+  font-size: $font-size-small
+  color: $color-text-muted
+  padding: $spacing-sm 0

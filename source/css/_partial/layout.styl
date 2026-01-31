@@ -1,0 +1,58 @@
+// Layout Styles
+
+// ---- Container ----
+.container
+  max-width: $page-width
+  margin: 0 auto
+  padding: 0 $spacing-md
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+// ---- Main ----
+.main
+  flex: 1
+  padding: $section-gap 0
+
+// ---- Home Layout ----
+.home-layout
+  display: flex
+  gap: $content-gap
+
+  // Vertical layout (leavesongs style)
+  &.vertical
+    flex-direction: column
+    max-width: 800px
+    margin: 0 auto
+
+    .sidebar
+      margin-bottom: $spacing-md
+
+    .profile
+      text-align: left
+
+    .search-box
+      margin-top: $spacing-md
+      margin-bottom: 0
+
+  +respond-to($breakpoint-tablet)
+    flex-direction: column
+
+// ---- Sidebar Area ----
+.sidebar-area
+  width: $sidebar-width
+  flex-shrink: 0
+
+  +respond-to($breakpoint-tablet)
+    width: 100%
+    order: -1
+
+// ---- Content Area ----
+.content-area
+  flex: 1
+  min-width: 0
+
+// ---- Page Layout (no sidebar) ----
+.page-layout
+  max-width: 720px
+  margin: 0 auto

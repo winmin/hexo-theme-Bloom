@@ -1,0 +1,142 @@
+// Header & Navigation Styles
+
+.header
+  position: sticky
+  top: 0
+  padding: $spacing-md 0
+  border-bottom: 1px solid $color-border
+  background: $color-background
+  z-index: 100
+
+.header-inner
+  max-width: $page-width
+  margin: 0 auto
+  padding: 0 $spacing-md
+
+// ---- Brand (Logo + Title) ----
+.header-brand
+  display: flex
+  align-items: center
+  gap: $spacing-md
+  margin-bottom: $spacing-sm
+
+.logo
+  display: flex
+  align-items: center
+  flex-shrink: 0
+
+  img
+    display: block
+
+.site-title
+  font-size: 1.4rem
+  font-weight: 700
+  color: $color-text
+  text-decoration: none
+
+  &:hover
+    color: $color-accent
+
+// ---- Navigation ----
+.nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.nav-menu
+  display: flex
+  align-items: center
+  gap: 0
+  list-style: none
+  margin: 0
+  padding: 0
+
+  +respond-to($breakpoint-tablet)
+    position: fixed
+    top: 0
+    right: -100%
+    width: 70%
+    max-width: 300px
+    height: 100vh
+    background: $color-background
+    flex-direction: column
+    padding: 80px $spacing-lg $spacing-lg
+    gap: $spacing-md
+    transition: right $transition-normal
+    z-index: 99
+    box-shadow: $shadow-md
+
+    &.is-open
+      right: 0
+
+    .nav-divider
+      display: none
+
+.nav-item
+  +respond-to($breakpoint-tablet)
+    border-bottom: 1px solid $color-border
+    padding-bottom: $spacing-sm
+    width: 100%
+
+.nav-link
+  color: $color-accent
+  font-size: $font-size-base
+  text-decoration: none
+  transition: color $transition-fast
+  padding: 0 $spacing-sm
+
+  &:hover
+    color: $color-link
+
+  &.active
+    color: $color-accent
+
+// ---- Nav Divider ----
+.nav-divider
+  color: $color-text-muted
+  font-size: $font-size-small
+  user-select: none
+
+// ---- Nav Toggle (Mobile) ----
+.nav-toggle
+  display: none
+  flex-direction: column
+  gap: 5px
+  padding: $spacing-sm
+  background: none
+  border: none
+  cursor: pointer
+  z-index: 100
+
+  +respond-to($breakpoint-tablet)
+    display: flex
+
+.nav-toggle-bar
+  width: 22px
+  height: 2px
+  background: $color-text
+  transition: transform $transition-normal, opacity $transition-normal
+
+.nav-toggle.is-active
+  .nav-toggle-bar:nth-child(1)
+    transform: translateY(7px) rotate(45deg)
+
+  .nav-toggle-bar:nth-child(2)
+    opacity: 0
+
+  .nav-toggle-bar:nth-child(3)
+    transform: translateY(-7px) rotate(-45deg)
+
+// ---- Mobile Menu Overlay ----
+.nav-overlay
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.5)
+  z-index: 98
+
+  &.is-visible
+    display: block

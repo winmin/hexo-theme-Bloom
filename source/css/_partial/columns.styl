@@ -1,0 +1,125 @@
+// Homepage Columns Styles
+
+.columns-container
+  display: flex
+  gap: $content-gap
+
+  &.columns-single-column
+    flex-direction: column
+
+  &.columns-two-column
+    flex-direction: row
+
+    +respond-to($breakpoint-tablet)
+      flex-direction: column
+
+// ---- Single Column ----
+.column
+  flex: 1
+  min-width: 0
+
+  .columns-two-column &
+    width: calc(50% - ($content-gap / 2))
+
+    +respond-to($breakpoint-tablet)
+      width: 100%
+
+// ---- Column Title ----
+.column-title
+  font-size: 1.3rem
+  font-weight: 600
+  margin-bottom: $spacing-lg
+  color: $color-accent
+
+  a
+    color: $color-accent
+
+    &:hover
+      color: $color-link
+
+// ---- Posts List ----
+.column-posts
+  list-style: none
+
+.column-post-item
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  padding: 12px 0
+  border-bottom: 1px dashed darken($color-border, 20%)
+  gap: $spacing-md
+  line-height: 1.6
+
+  &:last-child
+    border-bottom: none
+
+  &:hover
+    .post-link
+      color: $color-link
+
+.post-link
+  color: $color-text
+  flex: 1
+  text-ellipsis()
+  transition: color $transition-fast
+
+.post-date
+  color: $color-text-secondary
+  font-size: $font-size-small
+  font-family: $font-family-mono
+  flex-shrink: 0
+
+// ---- View All Link ----
+.view-all
+  display: inline-block
+  margin-top: $spacing-md
+  font-size: $font-size-small
+  color: $color-link
+
+  &:hover
+    color: $color-link-hover
+
+// ---- No Posts ----
+.no-posts
+  color: $color-text-muted
+  font-style: italic
+  padding: $spacing-sm 0
+
+// ---- Default Post List (non-column) ----
+.post-list-section
+  margin-top: $spacing-md
+
+  .section-title
+    font-size: 1.3rem
+    font-weight: 600
+    margin-bottom: $spacing-md
+    color: $color-accent
+
+.post-list
+  list-style: none
+
+.post-list-item
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  padding: 12px 0
+  border-bottom: 1px dashed darken($color-border, 20%)
+  gap: $spacing-md
+  line-height: 1.6
+
+  &:last-child
+    border-bottom: none
+
+  .post-link
+    color: $color-text
+    flex: 1
+    text-ellipsis()
+
+    &:hover
+      color: $color-link
+
+  .post-date
+    color: $color-text-secondary
+    font-size: $font-size-small
+    font-family: $font-family-mono
+    flex-shrink: 0

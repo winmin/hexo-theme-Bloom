@@ -1,0 +1,29 @@
+{
+  "name": "hexo-theme-bloom",
+  "version": "1.0.0",
+  "description": "A clean Hexo theme with categorized column layout, inspired by Cactus dark mode",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourname/hexo-theme-Bloom.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "blog",
+    "dark",
+    "minimal",
+    "columns"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourname/hexo-theme-Bloom/issues"
+  },
+  "homepage": "https://github.com/yourname/hexo-theme-Bloom#readme",
+  "dependencies": {
+    "hexo-generator-searchdb": "^1.5.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-stylus": "^3.0.1"
+  }
+}

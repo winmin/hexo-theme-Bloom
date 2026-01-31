@@ -1,0 +1,12 @@
+<div class="error-page">
+  <div class="error-code">404</div>
+  <h1 class="error-title">
+    <%= theme.error_404.title || __('error_404.title') %>
+  </h1>
+  <p class="error-description">
+    <%= theme.error_404.description || __('error_404.description') %>
+  </p>
+  <a href="<%- url_for('/') %>" class="error-link">
+    <%= __('error_404.back_home') %>
+  </a>
+</div>

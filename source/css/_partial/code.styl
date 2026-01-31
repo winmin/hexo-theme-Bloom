@@ -1,0 +1,128 @@
+// Code Highlight Styles (Tomorrow Night Theme)
+
+// ---- Code Block ----
+figure.highlight
+pre
+.code-block
+  background: $color-background-code
+  border-radius: $border-radius
+  overflow: hidden
+  margin: $spacing-md 0
+  position: relative
+
+figure.highlight
+  margin: $spacing-md 0
+
+  pre
+    margin: 0
+    padding: $spacing-md
+    overflow-x: auto
+
+  table
+    width: 100%
+    border: none
+    margin: 0
+
+  td
+    padding: 0
+    border: none
+
+  .gutter
+    width: 40px
+    padding-right: $spacing-md
+    text-align: right
+    user-select: none
+
+    pre
+      padding: $spacing-md 0
+      padding-right: $spacing-md
+      color: $color-text-muted
+
+  .code
+    pre
+      padding: $spacing-md
+      padding-left: 0
+
+// ---- Line Numbers ----
+.line
+  height: 1.5em
+
+// ---- Copy Button ----
+.copy-button
+  position: absolute
+  top: $spacing-sm
+  right: $spacing-sm
+  padding: $spacing-xs $spacing-sm
+  font-size: $font-size-small
+  color: $color-text-secondary
+  background: $color-background
+  border: 1px solid $color-border
+  border-radius: $border-radius
+  cursor: pointer
+  opacity: 0
+  transition: opacity $transition-fast
+
+  &:hover
+    color: $color-text
+    border-color: $color-text-secondary
+
+figure.highlight:hover .copy-button
+pre:hover .copy-button
+  opacity: 1
+
+// ---- Syntax Highlighting (Tomorrow Night) ----
+.highlight
+  .comment
+  .quote
+    color: $color-code-comment
+
+  .keyword
+  .selector-tag
+  .addition
+    color: $color-code-keyword
+
+  .number
+  .string
+  .meta .meta-string
+  .literal
+  .doctag
+  .regexp
+    color: $color-code-string
+
+  .title
+  .section
+  .name
+  .selector-id
+  .selector-class
+    color: $color-code-function
+
+  .attribute
+  .attr
+  .variable
+  .template-variable
+  .class .title
+  .type
+    color: $color-code-variable
+
+  .symbol
+  .bullet
+  .subst
+  .meta
+  .meta .keyword
+  .selector-attr
+  .selector-pseudo
+  .link
+    color: $color-code-number
+
+  .built_in
+  .deletion
+    color: $color-code-keyword
+
+  .formula
+    background: $color-background-code
+
+  .emphasis
+    font-style: italic
+
+  .strong
+    font-weight: bold
