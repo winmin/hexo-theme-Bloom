@@ -2,6 +2,14 @@
 
 A clean and minimal Hexo theme with categorized column layout, inspired by [hexo-theme-cactus](https://github.com/probberechts/hexo-theme-cactus) dark mode and [leavesongs.com](https://www.leavesongs.com).
 
+## Screenshots
+
+### Two-Column Homepage
+![Two Column Layout](screenshots/two-column.png)
+
+### Single-Column Category Page
+![Single Column Layout](screenshots/single-column.png)
+
 ## Features
 
 - **Dark Mode** - Beautiful dark color scheme
