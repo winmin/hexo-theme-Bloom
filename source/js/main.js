@@ -38,7 +38,9 @@
       var targetId = this.getAttribute('href');
       if (targetId === '#') return;
 
-      var target = document.querySelector(targetId);
+      // Use getElementById to handle special characters like colons in footnotes
+      var id = targetId.substring(1); // Remove the '#'
+      var target = document.getElementById(id);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({
