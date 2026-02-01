@@ -3,12 +3,15 @@
     <%- partial('_partial/columns') %>
   <% } else { %>
     <section class="post-list-section">
-      <h2 class="section-title"><%= theme.default_list.title || 'Recent Posts' %></h2>
+      <% if (page.current === 1) { %>
+        <h2 class="section-title"><%= theme.default_list.title || 'Recent Posts' %></h2>
+      <% } else { %>
+        <h2 class="section-title">Posts - Page <%= page.current %></h2>
+      <% } %>
       <ul class="post-list">
         <%
-        var limit = theme.default_list.limit || 15;
-        var posts = site.posts.sort('-date').limit(limit);
-        posts.each(function(post) {
+        // Use page.posts for pagination support
+        page.posts.each(function(post) {
         %>
           <li class="post-list-item">
             <a href="<%- url_for(post.path) %>" class="post-link">
