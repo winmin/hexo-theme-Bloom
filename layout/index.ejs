@@ -10,8 +10,8 @@
       <% } %>
       <ul class="post-list">
         <%
-        // Use page.posts for pagination support
-        page.posts.each(function(post) {
+        // Use page.posts for pagination, sorted by date descending
+        page.posts.sort('-date').each(function(post) {
         %>
           <li class="post-list-item">
             <a href="<%- url_for(post.path) %>" class="post-link">
